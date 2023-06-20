@@ -28,7 +28,7 @@ df_0.12435.dat
 
 процедура на фортране для записи массива с временем
 ```fortran
-subroutine write_float_array(arr, arr_name, time)
+subroutine write_time_array(arr, arr_name, time)
     implicit none
     real(wp), intent(in) :: arr(:)
     character(len=*), intent(in) :: array_name
@@ -48,7 +48,7 @@ end subroutine
 
 процедура на фортране для записи массива arr с именем arr_name
 ```fortran
-subroutine write_float_array(arr, arr_name)
+subroutine write_array(arr, arr_name)
     implicit none
     real(wp), intent(in) :: arr(:)
     character(len=*), intent(in) :: array_name
