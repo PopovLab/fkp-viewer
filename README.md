@@ -21,4 +21,27 @@ phi.bin - сетка по углу phi (бинарный формат)
 df_{time}.dat - массив распределения  (тексторый формат)  
 df_{time}.bin - массив распределения  (тексторый формат)
 
-time - время - только цифры после запятой
+time - время  
+пример имени файла:
+df_0.12435.dat
+
+
+процедура на фортране
+```fortran
+subroutine write_float_array(arr, arr_name, time)
+    implicit none
+    real(wp), intent(in) :: arr(:)
+    character(len=*), intent(in) :: array_name
+    real(wp), intent(in) :: time
+
+    integer, parameter :: iu = 20
+    character(120) fname
+
+    write(fname,'("results/", A, "_", f9.7,".dat")') arr_name, time
+    print *, fname
+    open(iu, file=fname)
+    write(iu,*) arr
+    close(iu)
+
+end subroutine
+```
